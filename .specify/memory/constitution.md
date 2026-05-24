@@ -1,50 +1,45 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# AISess Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-First Delivery
+Every non-trivial change MUST begin with a written specification before implementation starts. Work proceeds in the order `spec -> plan -> tasks -> implementation`, and each artifact MUST remain consistent with the one before it. If scope changes during execution, the relevant specification artifacts MUST be updated before code work continues.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Simplicity Over Premature Abstraction
+Choose the simplest design that satisfies the current requirement. New layers, frameworks, abstractions, or infrastructure are allowed only when justified by a concrete need documented in the plan. Avoid speculative extensibility, avoid broad refactors unrelated to the active task, and prefer localized, reversible changes.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-Driven Development (TDD)
+All implementation work MUST follow TDD. Developers MUST first write or update a failing unit test that captures the intended behavior, then implement the smallest production change needed to make that test pass, and finally refactor while keeping the test suite green. During development, the relevant tests MUST be rerun frequently enough to catch regressions immediately. Production code changes without corresponding preceding tests are non-compliant except for purely non-executable assets such as prose documentation or configuration with no executable behavior.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+## Project Constraints
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+- Primary workflow files live under `specs/` for feature work and `.specify/` for shared process assets.
+- All new feature work SHOULD use the provided Spec Kit templates unless there is a documented reason to diverge.
+- Git is the source of truth for progress tracking, reviewability, and milestone capture.
+- Documentation should be concise, implementation-facing, and kept in sync with real behavior.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+1. Establish or refine the governing constitution when project rules change.
+2. Create a feature specification before implementation.
+3. Produce an implementation plan that passes the Constitution Check.
+4. Generate tasks that preserve clear execution order and validation steps.
+5. Implement in small batches, validating each batch before declaring completion.
+6. Record meaningful milestones in Git with focused commits.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs project workflow and overrides conflicting informal practice. Amendments require documenting the change, updating any affected templates, and recording the change in version metadata below.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Versioning rules:
+- MAJOR: Removes or materially redefines a governing principle.
+- MINOR: Adds a new principle or materially expands workflow requirements.
+- PATCH: Clarifies wording, fixes placeholders, or improves guidance without changing intent.
+
+Compliance review expectations:
+- Every plan MUST include a Constitution Check against these principles.
+- Implementation plans MUST justify any new abstraction beyond the simplest viable design.
+- Implementation tasks MUST reflect TDD order: failing test first, implementation second, refactor third.
+- Implementation reviews SHOULD reject work that skips required spec artifacts or violates TDD.
+
+**Version**: 1.0.0 | **Ratified**: 2026-05-24 | **Last Amended**: 2026-05-24

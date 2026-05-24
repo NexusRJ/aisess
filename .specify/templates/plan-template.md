@@ -40,7 +40,9 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Spec-first path confirmed: `spec.md` exists and plan stays within its scope.
+- Simplicity is justified: any extra abstraction or infrastructure is explicitly defended.
+- TDD is enforced: failing unit tests are defined before implementation, and red-green-refactor is preserved.
 
 ## Project Structure
 
