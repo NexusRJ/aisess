@@ -43,6 +43,7 @@
 - Spec-first path confirmed: `spec.md` exists and plan stays within its scope.
 - Simplicity is justified: any extra abstraction or infrastructure is explicitly defended.
 - TDD is enforced: failing unit tests are defined before implementation, and red-green-refactor is preserved.
+- Branch workflow is defined: this spec uses a dedicated feature branch and includes sync points with `main` and `dev`.
 
 ## Project Structure
 

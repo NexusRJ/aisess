@@ -16,16 +16,19 @@ All implementation work MUST follow TDD. Developers MUST first write or update a
 - Primary workflow files live under `specs/` for feature work and `.specify/` for shared process assets.
 - All new feature work SHOULD use the provided Spec Kit templates unless there is a documented reason to diverge.
 - Git is the source of truth for progress tracking, reviewability, and milestone capture.
+- Every new specification MUST be created on its own dedicated feature branch.
+- Feature branches MUST stay synchronized with the current progress of `main` and, when used, `dev` before and during implementation.
 - Documentation should be concise, implementation-facing, and kept in sync with real behavior.
 
 ## Development Workflow
 
 1. Establish or refine the governing constitution when project rules change.
-2. Create a feature specification before implementation.
-3. Produce an implementation plan that passes the Constitution Check.
-4. Generate tasks that preserve clear execution order and validation steps.
-5. Implement in small batches, validating each batch before declaring completion.
-6. Record meaningful milestones in Git with focused commits.
+2. Create or update a dedicated feature branch and synchronize it with `main` and `dev` progress as applicable.
+3. Create a feature specification before implementation.
+4. Produce an implementation plan that passes the Constitution Check.
+5. Generate tasks that preserve clear execution order and validation steps.
+6. Implement in small batches, validating each batch before declaring completion.
+7. Keep the feature branch synchronized throughout delivery and record meaningful milestones in Git with focused commits.
 
 ## Governance
 
@@ -40,6 +43,7 @@ Compliance review expectations:
 - Every plan MUST include a Constitution Check against these principles.
 - Implementation plans MUST justify any new abstraction beyond the simplest viable design.
 - Implementation tasks MUST reflect TDD order: failing test first, implementation second, refactor third.
+- Every feature workflow MUST use a dedicated branch and explicitly account for synchronization with `main` and `dev` when applicable.
 - Implementation reviews SHOULD reject work that skips required spec artifacts or violates TDD.
 
 **Version**: 1.0.0 | **Ratified**: 2026-05-24 | **Last Amended**: 2026-05-24
