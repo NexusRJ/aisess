@@ -14,6 +14,8 @@ All implementation work MUST follow TDD. Developers MUST first write or update a
 ## Project Constraints
 
 - Primary workflow files live under `specs/` for feature work and `.specify/` for shared process assets.
+- Default implementation language for this project is `Rust`.
+- Default terminal UI stack for this project is `ratatui` with `crossterm` unless a feature plan justifies a different choice.
 - All new feature work SHOULD use the provided Spec Kit templates unless there is a documented reason to diverge.
 - Git is the source of truth for progress tracking, reviewability, and milestone capture.
 - Every new specification MUST be created on its own dedicated feature branch.
@@ -42,6 +44,7 @@ Versioning rules:
 Compliance review expectations:
 - Every plan MUST include a Constitution Check against these principles.
 - Implementation plans MUST justify any new abstraction beyond the simplest viable design.
+- Implementation plans MUST follow the project's default Rust stack unless a documented exception is approved.
 - Implementation tasks MUST reflect TDD order: failing test first, implementation second, refactor third.
 - Every feature workflow MUST use a dedicated branch and explicitly account for synchronization with `main` and `dev` when applicable.
 - Implementation reviews SHOULD reject work that skips required spec artifacts or violates TDD.
