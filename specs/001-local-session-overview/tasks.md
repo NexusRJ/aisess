@@ -18,9 +18,9 @@
 
 **Purpose**: Initialize the Rust application structure and TDD-ready test scaffolding
 
-- [ ] T001 Create Rust application structure and module entry points in `Cargo.toml`, `src/main.rs`, `src/app/mod.rs`, `src/discovery/mod.rs`, `src/model/mod.rs`, `src/sort/mod.rs`, and `src/tui/mod.rs`
-- [ ] T002 Configure core dependencies for the TUI application in `Cargo.toml`
-- [ ] T003 [P] Create integration test scaffold for end-to-end overview flows in `tests/integration/overview_app.rs`
+- [x] T001 Create Rust application structure and module entry points in `Cargo.toml`, `src/main.rs`, `src/app/mod.rs`, `src/discovery/mod.rs`, `src/model/mod.rs`, `src/sort/mod.rs`, and `src/tui/mod.rs`
+- [x] T002 Configure core dependencies for the TUI application in `Cargo.toml`
+- [x] T003 [P] Create integration test scaffold for end-to-end overview flows in `tests/integration/overview_app.rs`
 
 ---
 
@@ -30,11 +30,11 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 [P] Create failing unit tests for normalized session parsing and missing-metadata handling in `src/model/mod.rs`
-- [ ] T005 [P] Create failing unit tests for overview refresh-state transitions in `src/app/mod.rs`
-- [ ] T006 Implement the normalized session and overview snapshot models in `src/model/mod.rs`
-- [ ] T007 Implement application refresh state and polling coordination in `src/app/mod.rs`
-- [ ] T008 Define provider discovery adapter interfaces and shared metadata error handling in `src/discovery/mod.rs`
+- [x] T004 [P] Create failing unit tests for normalized session parsing and missing-metadata handling in `src/model/mod.rs`
+- [x] T005 [P] Create failing unit tests for overview refresh-state transitions in `src/app/mod.rs`
+- [x] T006 Implement the normalized session and overview snapshot models in `src/model/mod.rs`
+- [x] T007 Implement application refresh state and polling coordination in `src/app/mod.rs`
+- [x] T008 Define provider discovery adapter interfaces and shared metadata error handling in `src/discovery/mod.rs`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -50,16 +50,16 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T009 [P] [US1] Create failing unit tests for provider metadata normalization into overview rows in `src/discovery/mod.rs`
-- [ ] T010 [P] [US1] Create failing unit tests for row formatting with missing fields in `src/tui/mod.rs`
-- [ ] T011 [US1] Create failing integration test for rendering multiple discovered sessions in `tests/integration/overview_app.rs`
+- [x] T009 [P] [US1] Create failing unit tests for provider metadata normalization into overview rows in `src/discovery/mod.rs`
+- [x] T010 [P] [US1] Create failing unit tests for row formatting with missing fields in `src/tui/mod.rs`
+- [x] T011 [US1] Create failing integration test for rendering multiple discovered sessions in `tests/integration/overview_app.rs`
 
 ### Implementation for User Story 1
 
-- [ ] T012 [US1] Implement the first local provider discovery adapter and metadata normalization pipeline in `src/discovery/mod.rs`
-- [ ] T013 [US1] Implement overview row view models for title, summary, runtime, token usage, context length, and message count in `src/tui/mod.rs`
-- [ ] T014 [US1] Implement the read-only session overview screen in `src/tui/mod.rs` and wire it through `src/main.rs`
-- [ ] T015 [US1] Validate the MVP flow against the independent test and keep the new test suite green
+- [x] T012 [US1] Implement the first local provider discovery adapter and metadata normalization pipeline in `src/discovery/mod.rs`
+- [x] T013 [US1] Implement overview row view models for title, summary, runtime, token usage, context length, and message count in `src/tui/mod.rs`
+- [x] T014 [US1] Implement the read-only session overview screen in `src/tui/mod.rs` and wire it through `src/main.rs`
+- [x] T015 [US1] Validate the MVP flow against the independent test and keep the new test suite green
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -73,15 +73,15 @@
 
 ### Tests for User Story 2 ⚠️
 
-- [ ] T016 [P] [US2] Create failing unit tests for supported sort modes and deterministic missing-value handling in `src/sort/mod.rs`
-- [ ] T017 [US2] Create failing integration test for changing sort modes from the TUI in `tests/integration/overview_app.rs`
+- [x] T016 [P] [US2] Create failing unit tests for supported sort modes and deterministic missing-value handling in `src/sort/mod.rs`
+- [x] T017 [US2] Create failing integration test for changing sort modes from the TUI in `tests/integration/overview_app.rs`
 
 ### Implementation for User Story 2
 
-- [ ] T018 [US2] Implement overview sorting by summary, runtime, token usage, and context length in `src/sort/mod.rs`
-- [ ] T019 [US2] Implement read-only TUI controls and state updates for switching sort modes in `src/tui/mod.rs`
-- [ ] T020 [US2] Integrate sorting behavior into the app state and refresh flow in `src/app/mod.rs`
-- [ ] T021 [US2] Validate sorting behavior against the independent test and keep the test suite green
+- [x] T018 [US2] Implement overview sorting by summary, runtime, token usage, and context length in `src/sort/mod.rs`
+- [x] T019 [US2] Implement read-only TUI controls and state updates for switching sort modes in `src/tui/mod.rs`
+- [x] T020 [US2] Integrate sorting behavior into the app state and refresh flow in `src/app/mod.rs`
+- [x] T021 [US2] Validate sorting behavior against the independent test and keep the test suite green
 
 **Checkpoint**: At this point, User Stories 1 and 2 should both work independently
 
@@ -95,15 +95,15 @@
 
 ### Tests for User Story 3 ⚠️
 
-- [ ] T022 [P] [US3] Create failing unit tests for polling refresh updates, including added, removed, and changed sessions in `src/app/mod.rs`
-- [ ] T023 [US3] Create failing integration test for timed refresh behavior in `tests/integration/overview_app.rs`
+- [x] T022 [P] [US3] Create failing unit tests for polling refresh updates, including added, removed, and changed sessions in `src/app/mod.rs`
+- [x] T023 [US3] Create failing integration test for timed refresh behavior in `tests/integration/overview_app.rs`
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] Implement timed polling refresh and snapshot replacement in `src/app/mod.rs`
-- [ ] T025 [US3] Implement TUI update handling for refreshed session lists and metrics in `src/tui/mod.rs`
-- [ ] T026 [US3] Harden refresh behavior for partial or temporarily unreadable metadata in `src/discovery/mod.rs` and `src/app/mod.rs`
-- [ ] T027 [US3] Validate timed refresh behavior against the independent test and keep the test suite green
+- [x] T024 [US3] Implement timed polling refresh and snapshot replacement in `src/app/mod.rs`
+- [x] T025 [US3] Implement TUI update handling for refreshed session lists and metrics in `src/tui/mod.rs`
+- [x] T026 [US3] Harden refresh behavior for partial or temporarily unreadable metadata in `src/discovery/mod.rs` and `src/app/mod.rs`
+- [x] T027 [US3] Validate timed refresh behavior against the independent test and keep the test suite green
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -113,9 +113,9 @@
 
 **Purpose**: Finalize usability, documentation, and regression confidence without expanding scope
 
-- [ ] T028 [P] Add quickstart-aligned run instructions and developer notes in `specs/001-local-session-overview/quickstart.md` and project docs as needed
-- [ ] T029 Run the full Rust test suite with `cargo test` and resolve only feature-related failures
-- [ ] T030 Perform manual validation of the TUI overview against the checklist in `specs/001-local-session-overview/quickstart.md`
+- [x] T028 [P] Add quickstart-aligned run instructions and developer notes in `specs/001-local-session-overview/quickstart.md` and project docs as needed
+- [x] T029 Run the full Rust test suite with `cargo test` and resolve only feature-related failures
+- [x] T030 Perform manual validation of the TUI overview against the checklist in `specs/001-local-session-overview/quickstart.md`
 
 ---
 
